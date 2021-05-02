@@ -17,7 +17,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.lower().startswith(prefix):
+    if message.content.lower().startswith("eat "):
         random.seed()
         print(message.content)
         args = message.content.strip().split(' ')
@@ -51,5 +51,4 @@ async def on_message(message):
 
 headers = {'Authorization': 'Bearer %s' % config('YELP_TOKEN')}
 url='https://api.yelp.com/v3/businesses/search'
-prefix = 'eat '
 client.run(config('DISCORD_TOKEN'))
